@@ -353,6 +353,20 @@ void delatbet(struct node **start,int pos){
         ptr->next->prev = temp;
     delete ptr;
 }
+Node* reverseList(Node* head) {
+    Node* prev = NULL;
+    Node* current = head;
+    Node* next = NULL;
+
+    while (current != NULL) {
+        next = current->next;   // store next node
+        current->next = prev;   // reverse the link
+        prev = current;         // move prev forward
+        current = next;         // move current forward
+    }
+    return prev; // new head
+}
+
 
 int main(){
     node *start = create();

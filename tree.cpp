@@ -31,6 +31,22 @@ void inorder(struct Node *root){
     cout << root->data << endl;
     inorder(root->right);
 }
+void preorder(struct Node *root){
+    if(root==NULL){
+        return;
+    }
+    cout << root->data << endl;
+    inorder(root->left);
+    inorder(root->right);
+}
+void postorder(struct Node *root){
+    if(root==NULL){
+        return;
+    }
+    inorder(root->left);
+    inorder(root->right);
+    cout << root->data << endl;
+}
 Node *search(Node *root,int key){
     if(root==NULL || root->data==key){
         return root;
